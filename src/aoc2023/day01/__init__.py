@@ -19,4 +19,21 @@ def part1(data=data, *args, **kwargs):
 
 
 def part2(*args, **kwargs):
-    return
+    spelt = {
+        "one": "1",
+        "two": "2",
+        "three": "3",
+        "four": "4",
+        "five": "5",
+        "six": "6",
+        "seven": "7",
+        "eight": "8",
+        "nine": "9",
+    }
+    new = []
+    new = "\n".join(data)
+    for k, v in spelt.items():
+        new = new.replace(k,f"{k}{v}{k}")
+    new = new.split("\n")
+
+    return part1(data=new)
